@@ -1,0 +1,48 @@
+{
+  "name": "rollup-plugin-dts-bundle",
+  "description": "Rollup plugin for bundling .d.ts files",
+  "version": "1.0.0",
+  "author": "Dmitry Tutykhin <dmitry.tut@gmail.com>",
+  "repository": "dmitrytut/rollup-plugin-dts-bundle",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "rollup -c",
+    "lint": "eslint src",
+    "postpublish": "npm run clean",
+    "prepublishOnly": "npm run lint && npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@types/dts-bundle": "0.0.31",
+    "del": "^6.0.0",
+    "dts-bundle": "^0.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.44.0",
+    "rollup-plugin-auto-external": "^2.0.0"
+  },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "readme.md"
+  ],
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "dts",
+    "dts-bundle",
+    "merge",
+    "typescript",
+    "typings"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT"
+}
